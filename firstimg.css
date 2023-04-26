@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+@import url(index.html);
+
+@media screen and (max-width: 768px) {
+   
+  #ja {
+    font-size: 12px;
+    top: 35%;
+    width: 10%;
+    margin-left: 2%;
+  }
+  #nw {
+    width: 50px;
+    height: auto; 
+    margin-left: 2%;
+    top: 70%;
+  }
+}
+    
+    
+    
+  
+  
+  /* 768px 이상일 때 */
+  @media screen and (min-width: 650px) {
+  
+    .bn { margin-right: 20px;
+          margin-left: 20px;}
+
+      
+   
+  }
+
+  
+
+.fir {
+    display: flex;
+    
+   
+    
+  }
+  
+ .gr{width: 25%;
+     height: 25%;
+     margin-left: 6%;
+     margin-right: 3%;
+    
+}
+  
+
+  
+
+  #ja {width: 18%;
+    margin-left: 6%;
+    position: absolute;
+    background-color: #969696;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 50%;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.6;
+    transition: 0.3s;
+    z-index: 1; 
+    top: 70%;
+    display: block;
+    }
+
+    #ja:hover{opacity: 1;}
+
+    #nw{width: 75px;
+         height: auto; 
+         z-index: 2;
+         position: absolute;
+         margin-left: 26%;
+         top: 69%;
+    
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .slides {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+    }
+    
+    .slides::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      
+    }
+    
+    .slides::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+    
+    .slides::-webkit-scrollbar-track {
+      background: white;
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 5px white;
+    }
+    
+    .slides img {
+      width: 400px;
+      height: 580px;
+      scroll-snap-align: start;
+      border-radius: 30px;
+      margin-right: 30px;
+
+    }
+    
+    .slides {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .slides::-webkit-scrollbar {
+      display: none;
+    }
+
+.pg{width: 90%;
+    height: 25%;
+    margin-left: 6%;
+}
+
+.pg2{width: 90%;
+  height: 25%;
+  margin-left: 6%;
+}
+
+.image-container {
+  height: 1000px; /* 이미지를 보이게 하기 위한 height 값을 지정합니다 */
+}
+
+.pg, .pg2 {
+  opacity: 0; /* 이미지를 처음에 투명하게 만듭니다 */
+  transition: opacity 1.5s ease-in-out; /* 이미지가 나타나는 트랜지션 효과를 추가합니다 */
+}
+
+a{display: block;}

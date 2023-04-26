@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <title>Projecter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+ 
+ 
+ <style>
+    @import url(background.css);
+    @import url(firstimg.css);
+  </style>
+ 
+ 
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+$(function () {
+  var slideCount = $(".slides img").length;
+  var slideWidth = $(".slides img").width();
+  var slideHeight = $(".slides img").height();
+  var slideInterval = 3000;
+  var currentSlide = 0; // 첫번째 사진부터 시작하도록 0으로 설정
+  var interval;
+
+  function startSlider() {
+    interval = setInterval(function () {
+      if (currentSlide === slideCount - 1) {
+        currentSlide = 0; // 마지막 사진에서 첫번째 사진으로 이어지도록 0으로 설정
+        $(".slides").animate({ "margin-left": 0 }, 1000);
+      } else {
+        currentSlide++;
+        $(".slides").animate({ "margin-left": "-=" + slideWidth }, 1000);
+      }
+    }, slideInterval);
+  }
+
+  function stopSlider() {
+    clearInterval(interval);
+  }
+
+  $(".slides").on("mouseenter", stopSlider).on("mouseleave", startSlider);
+
+  startSlider();
+});
+
+window.addEventListener('scroll', function() {
+  const images = document.querySelectorAll('.pg, .pg2');
+  images.forEach(function(image) {
+    if (image.getBoundingClientRect().top < window.innerHeight) {
+      image.setAttribute('src', image.getAttribute('data-src'));
+      image.style.opacity = '1';
+    }
+  });
+});
+
+
+
+ </script>
+ 
+
+</head>
+
+<body>
+  
+  <header>
+    <img class="ti" src="imge/title.png">
+    <nav>
+      <ul>
+        <li><a href="#">동아리 소개</a></li>
+        <li><a href="jasehi.html">전시회</a></li>
+        <li><a href="#">작업물</a></li>
+      </ul>
+    </nav>
+    <button class="mun" href="#">문의</button>
+  </header>
+  
+  <br><br><br><br><br><br><br><br><br>
+  <a href="jasehi.html"><button id="ja">자세히보기</button></a>
+  <div class="fir">
+    <img class="gr" src="imge/grown.png">
+    
+    <img id="nw" src="imge/new.png">
+   
+    <img src="imge/1px.png">
+   
+    <div class="slider">
+      
+      <div class="slides">
+        <img src="imge/mainimg1.png">
+        <img src="imge/junik.jpg">
+        <img src="imge/junik2.jpg">
+        <img src="imge/tec.jpg">
+        <img src="imge/spri.jpg">
+      </div>
+      
+    </div>
+ 
+  </div>
+  
+  <br><br><br><br><br><br><br
+  
+  <div class="image-container">
+    <img class="pg" src="imge/1p2.png" data-src="imge/1p2.png">
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <img class="pg2" src="imge/1p3.png" data-src="imge/1p3.png">
+    <!-- 이미지의 data-src 속성을 사용하여 실제 이미지 경로를 저장합니다 -->
+    <br><br><br><br><br><br><br><br><br>
+    <img class="pg2" src="imge/1p4.png" data-src="imge/1p4.png">
+  </div>
+  
+</body>
+
+</html>
+
